@@ -7,12 +7,13 @@ import java.util.List;
 
 public interface UserLoginDao {
     /*
-     * 根据用户名查询信息
+     * 用户登录
      * */
-    UserLogin getUserByUserName(@Param("username") String username);
+    UserLogin login(@Param("username") String username, @Param("password") String password);
 
     /*
-    * 查询全部
-    * */
-    List<UserLogin> getAllUser();
+     * 用户注册
+     * */
+    int register(@Param("username") String username, @Param("password") String password);
+
 }
