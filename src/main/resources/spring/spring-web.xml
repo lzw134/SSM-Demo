@@ -44,8 +44,8 @@
 			<mvc:mapping path="/*/*/*/*" />
 
 			<!--  不拦截的请求 -->
-
-			<mvc:exclude-mapping path="/user/login" />
+			<mvc:exclude-mapping path="/**/user/login" />
+			<mvc:exclude-mapping path="/**/user/register" />
 
 			<!--  拦截器对应的实现类 -->
 			<bean class="com.system.utils.TokenInterceptor" />

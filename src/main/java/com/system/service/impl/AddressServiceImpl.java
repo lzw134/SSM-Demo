@@ -2,11 +2,8 @@ package com.system.service.impl;
 
 
 import com.system.dao.AddressDao;
-import com.system.dao.UserLoginDao;
-import com.system.entity.UserLogin;
 import com.system.entity.address;
 import com.system.service.AddressService;
-import com.system.utils.Md5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

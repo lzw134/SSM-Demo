@@ -1,12 +1,12 @@
 package com.system.service;
 
 import com.system.entity.UserLogin;
+import com.system.utils.Result;
 
-import java.util.List;
 
 public interface UserLoginService {
 
-    UserLogin login(UserLogin user) throws Exception;
+    Result login(UserLogin user) throws Exception;
 
-    int register(UserLogin user) throws  Exception;
+    Result register(UserLogin user) throws  Exception;
 }

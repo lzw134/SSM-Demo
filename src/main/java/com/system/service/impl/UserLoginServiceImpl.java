@@ -4,11 +4,11 @@ package com.system.service.impl;
 import com.system.dao.UserLoginDao;
 import com.system.entity.UserLogin;
 import com.system.utils.Md5;
+import com.system.utils.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.system.service.UserLoginService;
-
-import java.util.List;
+import com.system.utils.Result;
 
 
 @Service
@@ -20,26 +20,29 @@ public class UserLoginServiceImpl implements UserLoginService{
     *用户登陆
     **/
     @Override
-    public UserLogin login(UserLogin user) throws Exception {
+    public Result login(UserLogin user) throws Exception {
 
         // 1.调用mapper方法 user2:包含了密文密码
         UserLogin userlogin = userlogindao.login(user.getUsername(),Md5.md5(user.getPassword()));
 
-        return userlogin;
+        if(userlogin==null){
+            return Result.fail(400,"登录失败",null);
+        }else{
+            String token = TokenUtil.sign(userlogin.getU_id());
+            return Result.succ(200,"登录成功",token);
+        }
     }
 
     /*
     * 用户注册
     * */
     @Override
-    public int register(UserLogin user) throws Exception {
-        UserLogin userLogin = userlogindao.login(user.getUsername(),Md5.md5(user.getPassword()));
-        if(userLogin==null){
-            int result = userlogindao.register(user.getUsername(),Md5.md5(user.getPassword()));
-            return result;
+    public Result register(UserLogin user) throws Exception {
+        int result = userlogindao.register(user.getUsername(),Md5.md5(user.getPassword()));
+        if(result==1){
+            return Result.succ(200,"注册成功",null);
         }else{
-            /*返回-1代表该用户已经注册过*/
-            return  -1;
+            return Result.fail(400,"该账号已存在",null);
         }
     }
 }
