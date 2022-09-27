@@ -21,7 +21,6 @@ import com.system.utils.Result;
  */
 public class TokenInterceptor implements HandlerInterceptor {
 
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String url = request.getRequestURI();
@@ -50,6 +49,7 @@ public class TokenInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
+
     }
 
     @Override

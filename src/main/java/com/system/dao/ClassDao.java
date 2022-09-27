@@ -12,4 +12,7 @@ import java.util.List;
 public interface ClassDao {
     /*查询所有分类信息*/
     List<StoreClass> QueryAllClass();
+
+    /*增加分类信息*/
+    int AddClass(StoreClass storeClass);
 }

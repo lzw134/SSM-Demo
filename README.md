@@ -9,3 +9,6 @@ https://blog.csdn.net/qq_33591873/article/details/111878016
 
 # idea根据DataSourse创建entity
 https://www.cnblogs.com/jpfss/p/11122023.html
+
+# 上传图片并保存到数据库
+https://blog.51cto.com/u_15295608/3099131

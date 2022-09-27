@@ -6,4 +6,9 @@
     <select id="QueryAllClass" resultType="StoreClass">
         select * from store_class
     </select>
+
+    <insert id="AddClass">
+        insert into store_class
+        values (null, #{text}, #{good_pic}, #{add_time}, #{good_id})
+    </insert>
 </mapper>
