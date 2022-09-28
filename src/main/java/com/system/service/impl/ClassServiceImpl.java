@@ -35,7 +35,7 @@ public class ClassServiceImpl implements ClassService {
     public Result addList(HttpServletRequest request, MultipartFile file, StoreClass storeClass) throws Exception {
 
         /*调用文件处理类*/
-        String newFileName = FileUtil.fileUtils(file);
+        String newFileName = FileUtil.fileUtils(request,file);
 
         storeClass.setGood_pic(newFileName);
 

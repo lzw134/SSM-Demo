@@ -36,7 +36,7 @@ public class ClassController {
     }
 
 
-    @RequestMapping(value = "/test", method = {RequestMethod.POST})
+    @RequestMapping(value = "/add", method = {RequestMethod.POST})
     @ResponseBody
     public Result test(HttpServletRequest request,MultipartFile file, StoreClass storeClass) throws Exception {
         return classService.addList(request,file,storeClass);

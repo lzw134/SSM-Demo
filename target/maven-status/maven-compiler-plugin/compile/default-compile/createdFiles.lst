@@ -16,6 +16,7 @@ com\system\entity\UserLogin.class
 com\system\utils\TokenUtil.class
 com\system\controller\GoodController.class
 com\system\service\impl\AddressServiceImpl.class
+com\system\utils\FileUtil.class
 com\system\controller\AddressController.class
 com\system\utils\Md5.class
 com\system\service\ClassService.class

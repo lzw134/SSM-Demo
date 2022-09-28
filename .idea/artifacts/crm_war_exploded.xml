@@ -64,6 +64,7 @@
         <element id="file-copy" path="$PROJECT_DIR$/target/ssm/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="crm/web/Web" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/webapp/image" />
     </root>
   </artifact>
 </component>
