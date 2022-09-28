@@ -1,6 +1,5 @@
 package com.system.utils;
 
-//import com.mall.util.TokenUtil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -9,8 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import com.system.utils.Result;
 
 
 /**
@@ -28,7 +25,7 @@ public class TokenInterceptor implements HandlerInterceptor {
 
        if(!url.endsWith("/crm-api/")){
            //从http请求头中取出token
-           String token = request.getHeader("Authorization");
+           String token = request.getHeader("token");
 
 
            //执行认证
@@ -46,6 +43,7 @@ public class TokenInterceptor implements HandlerInterceptor {
        return true;
 
     }
+
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {

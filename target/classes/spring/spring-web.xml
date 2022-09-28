@@ -47,6 +47,13 @@
 			<mvc:exclude-mapping path="/**/user/login" />
 			<mvc:exclude-mapping path="/**/user/register" />
 			<mvc:exclude-mapping path="/**/files/*" />
+            <!--放开swigger-->
+			<mvc:exclude-mapping path="/**/swagger-resources/**" />
+			<mvc:exclude-mapping path="/**/v2/**" />
+			<mvc:exclude-mapping path="/**/webjars/**" />
+			<mvc:exclude-mapping path="/**/doc.html/**" />
+			<mvc:exclude-mapping path="/**/swagger-ui.html/**" />
+
 
 			<!--  拦截器对应的实现类 -->
 			<bean class="com.system.utils.TokenInterceptor" />
@@ -62,6 +69,12 @@
 		<!-- 默认编码 -->
 		<property name="defaultEncoding" value="utf-8"></property>
 	</bean>
+
+	<!--配置下 swagger 的地址放行-->
+	<bean class="com.system.controller.SwaggerConfig"/>
+	<mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
+	<mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+
 
 
 </beans>
